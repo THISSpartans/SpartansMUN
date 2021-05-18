@@ -14,7 +14,23 @@ class NavigationBar extends React.Component {
   render() {
     return (
       <div class={styles.bar}>
-        <span>Dropdown 1</span>
+        <div class={styles.dropdown}>
+          <span>THISMUN 2022</span>
+          <div class={styles.dropdowncontent}>
+            <p><a href="/invite">Invitation Letter</a></p>
+            <p><a href="/announcements">Announcements</a></p>
+            <p><a href="/aboutus">Our Team</a></p>
+            <p><a href="/topics">Committees & Topics</a></p>
+            <p><a href="/dates">Dates & Deadlines</a></p>
+            <p><a href="/housing">Accomodation</a></p>
+            <p><a href="/transport">Transportation</a></p>
+            <p><a href="/faq">FAQ</a></p>
+          </div>
+        </div>
+
+        <div class={styles.dropdown}>
+          <span><a href="/signup">Register!</a></span>
+        </div>
       </div>
     )
   }
@@ -38,10 +54,7 @@ export default function Home() {
       </Head>
 
       <div id="top">
-          <HugeImage src="BACKGROUND.jpg"/>
-          <div className={styles.i19}><h1 className={styles.whitetitle}>
-            Welcome to <span className={styles.accent3}>THISMUN 2022</span>
-          </h1></div>
+          <HugeImage src="BACKGROUND.png"/>
       </div>
       <NavigationBar/>
       <main className={styles.main}>
