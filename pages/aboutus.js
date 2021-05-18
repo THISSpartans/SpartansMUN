@@ -28,11 +28,11 @@ class NavigationBar extends React.Component {
   }
 }
 
-class Header extends React.Component {
+export class Header extends React.Component {
   render() {
     return (
       <div>
-        <center><img className={styles.dlogo} src="THISMUNLOGO.png" width="200px" height="200px"></img>
+        <center><a href="/"><img className={styles.dlogo} src="THISMUNLOGO.png" width="200px" height="200px"></img></a>
         <h1 className={styles.massive}>THIS<span className={styles.accent1}>MUN</span></h1></center>
       </div>
     )
@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>THISMUN 2022</title>
+        <title>THISMUN 2022 – About Us</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
