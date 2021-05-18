@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/mun.module.css'
 import React from 'react'
-
+//AL
 class NavigationBar extends React.Component {
   render() {
     return (
