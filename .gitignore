@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+node_modules/.DS_Store
+node_modules/@babel/.DS_Store
+node_modules/cssnano-preset-simple/.DS_Store
+node_modules/cssnano-simple/.DS_Store
+node_modules/es-abstract/.DS_Store
+node_modules/jest-worker/.DS_Store
+node_modules/node-libs-browser/.DS_Store
+node_modules/node-releases/.DS_Store
+node_modules/pako/.DS_Store
