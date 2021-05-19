@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/mun.module.css'
 import React from 'react'
+import PreloadImage from 'react-preload-image'
 
 class HugeImage extends React.Component {
   render() {
     return (
-      <img className={styles.image} alt={this.props.alt} src={this.props.src} width="100%" height="100%"/>
+      <img srcset="BG521.png 521w, BG1042.png 1042w" className={styles.image} alt={this.props.alt} src={this.props.src} lazy/>
     )
   }
 }
@@ -13,10 +14,10 @@ class HugeImage extends React.Component {
 class NavigationBar extends React.Component {
   render() {
     return (
-      <div class={styles.bar}>
-        <div class={styles.dropdown}>
+      <div className={styles.bar}>
+        <div className={styles.dropdown}>
           <span>THISMUN 2022</span>
-          <div class={styles.dropdowncontent}>
+          <div className={styles.dropdowncontent}>
             <p><a href="/invite">Invitation Letter</a></p>
             <p><a href="/announcements">Announcements</a></p>
             <p><a href="/aboutus">Our Team</a></p>
@@ -28,7 +29,7 @@ class NavigationBar extends React.Component {
           </div>
         </div>
 
-        <div class={styles.dropdown}>
+        <div className={styles.dropdown}>
           <span><a href="/signup">Register!</a></span>
         </div>
       </div>
@@ -51,10 +52,14 @@ export default function Home() {
       <Head>
         <title>THISMUN 2022</title>
         <link rel="icon" href="/favicon.png" />
+        <link rel="preload" as="image" href="BG521.png" />
+        <link rel="preload" as="image" href="BG1042.png" />
+        <link rel="preload" as="image" href="THISMUNLOGO.png" />
+        <link rel="preload" as="image" href="SCHOOL LOGO.png" />
       </Head>
 
       <div id="top">
-          <HugeImage src="BACKGROUND.png"/>
+          <HugeImage src="BG1042.png"/>
       </div>
       <NavigationBar/>
       <main className={styles.main}>
