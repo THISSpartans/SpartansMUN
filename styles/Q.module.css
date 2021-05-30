@@ -1,0 +1,379 @@
+.nav {
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.2rem;
+  z-index: 100;
+  background: #A57CE333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #000,
+}
+
+.purple {
+  color: #8963C7;
+}
+
+.lightpurple {
+  color: #A57CE3;
+}
+
+.colorChange {
+  background: #8963C7;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.2rem;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #000,
+}
+
+.accent1 {
+  background: #A57CE3;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.2rem;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #000,
+}
+
+.accent2 {
+  background: #C197FF;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.2rem;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #000,
+}
+
+.accent3 {
+  background: #DEB2FF;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.2rem;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #000,
+}
+
+.accent4 {
+  background: #FBCEFF;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.2rem;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #000,
+}
+
+.accent5 {
+  background: #FBCEFFDD;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.2rem;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #fff,
+}
+
+.label {
+  color: #fff;
+  line-height: 0;
+  padding: 0;
+  font-size: 15pt;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-weight: bolder;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.ddcpurple {
+  font-weight: normal;
+  display: none;
+  position: absolute;
+  background-color: #A57CE3;
+  border: 0.5px solid #8963C7;
+  border-radius: 16px;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  color: #fff;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+.ddctransp {
+  font-weight: normal;
+  display: none;
+  position: absolute;
+  background-color: #A57CE355;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+  border-radius: 16px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 160px;
+  z-index: 1;
+  color: #fff;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+.dropdown:hover {
+  transform: translateY(3px);
+}
+
+.dropdown:hover .ddcpurple {
+  display: block;
+}
+
+.dropdown:hover .ddctransp {
+  display: block;
+}
+
+.con {
+  position: relative;
+}
+
+.box {
+  opacity: 100%;
+}
+
+.massivetop {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  font-size: 8vw;
+  padding: 0;
+  margin: 0;
+  font-weight: bolder;
+  color: #fff;
+  background-color: #0000002F;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.massivemiddle {
+  font-size: 2.5vw;
+  padding: 0;
+  margin: 0;
+  font-weight: bolder;
+  color: #fff;
+  background-color: #0000002F;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.massivebottom {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: 2vw;
+  padding: 0;
+  padding-bottom: 1rem;
+  margin: 0;
+  font-weight: bolder;
+  color: #fff;
+  background-color: #0000002F;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.overlay {
+  --W: 50%;
+  --H: 45%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--W);
+  height: var(--H);
+  margin: calc(-1*var(--H)/4) 0 0 calc(-1*var(--W)/2);
+  z-index: 10;
+  text-align: center;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.image {
+  object-fit: cover;
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  width: 100%;
+  opacity: 100%;
+}
+
+.welcome {
+  line-height: 1.5;
+  font-size: 1.25vw;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 1rem;
+}
+
+.welchead {
+  color: #8963C7;
+  font-size: 3vw;
+  margin: 0rem;
+}
+
+.welcsubhead {
+  color: #8963C7;
+  font-size: 3vw;
+  margin: 0rem;
+}
+
+.addressheading {
+  color: white;
+  font-weight: bolder;
+  font-size: 2.4vw;
+  line-height: 0;
+}
+
+.address {
+  color: white;
+  font-weight: normal;
+  font-size: 1.2vw;
+  line-height: 1;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.mainLeft {
+  float: left;
+  display: inline-block;
+  justify-content: center;
+  width: 50%;
+  padding: 20px;
+  vertical-align: middle;
+}
+
+.mainRight {
+  float: right;
+  display: inline-block;
+  justify-content: center;
+  width: 50%;
+  padding: 20px;
+  vertical-align: middle;
+}
+
+@keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+    80% {
+        transform: scaleY(1.1)
+    }
+    100% {
+        transform: scaleY(1)
+    }
+}
+
+@keyframes shrink {
+    0% {
+        width: 100%;
+    }
+    80% {
+        width: 25%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+.link {
+  --aiElementLineWeight: 5px;
+	--aiElementLineColor: #A57CE3;
+	--aiElementColor: #A57CE3;
+	--aiElementColorHover: #A57CE3;
+	--uiaiElementLineWeight: var(--aiElementLineWeight, 2px);
+	--uiaiElementLineColor: var(--aiElementLineColor, #000);
+	--aiElementPaddingBottom: var(--uiaiElementLineWeight);
+
+	position: relative;
+  --uirLinkDisplay: var(--rLinkDisplay, inline-flex);
+  --uirLinkTextColor: var(--rLinkTextColor);
+  --uirLinkTextDecoration: var(--rLinkTextDecoration, none);
+  display: var(--uirLinkDisplay) !important;
+  color: var(--uirLinkTextColor) !important;
+  text-decoration: var(--uirLinkTextDecoration) !important;
+  transition: transform .2s ease-in;
+  padding: 0;
+}
+
+.link::after{
+	transform: translate3d(0, 22px, 0);
+	transition: transform .2s ease-in;
+  content: "";
+	width: 100%;
+	height: var(--uiaiElementLineWeight);
+	background-color: var(--uiaiElementLineColor);
+
+	position: absolute;
+  bottom: 0;
+}
+
+.link:hover::after{
+	animation: shrink 300ms ease-in-out forwards;
+  transform: translate3d(0, 22px, 0);
+
+}
+
+.linkc {
+  color: var(--uiaiElementColor);
+}
+
+.linkcont {
+  height: 10px;
+  width: 50%;
+}
