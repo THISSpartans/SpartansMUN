@@ -4,7 +4,7 @@
   justify-content: space-around;
   padding: 0.2rem;
   z-index: 100;
-  background: #A57CE333;
+  background: #FBCEFF55;
   position: fixed;
   top: 0;
   left: 0;
@@ -17,7 +17,31 @@
 }
 
 .lightpurple {
-  color: #A57CE3;
+  color: #DEB2FF;
+  padding: 1.5px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.lightpurple:hover {
+  animation: a 350ms ease-in-out forwards;
+  background: #DEB2FFFF;
+  border-radius: 5px;
+  color: #fff;
+}
+
+@keyframes a {
+    0% {
+        background: #DEB2FF00;
+        color: #DEB2FF;
+    }
+    80% {
+        transform: #DEB2FFAA;
+    }
+    100% {
+        transform: #DEB2FFFF;
+        color: #FFFFFF;
+    }
 }
 
 .colorChange {
@@ -183,11 +207,12 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   font-size: 8vw;
-  padding: 0;
+  padding: 5px;
+  padding-bottom: 2.5px;
   margin: 0;
   font-weight: bolder;
   color: #fff;
-  background-color: #0000002F;
+  background-color: #0000004D;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -196,11 +221,11 @@
 
 .massivemiddle {
   font-size: 2.5vw;
-  padding: 0;
+  padding: 2.5px;
   margin: 0;
   font-weight: bolder;
   color: #fff;
-  background-color: #0000002F;
+  background-color: #0000004D;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -211,12 +236,12 @@
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   font-size: 2vw;
-  padding: 0;
+  padding: 2.5px;
   padding-bottom: 1rem;
   margin: 0;
   font-weight: bolder;
   color: #fff;
-  background-color: #0000002F;
+  background-color: #0000004D;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -323,8 +348,8 @@
     0% {
         width: 100%;
     }
-    80% {
-        width: 25%;
+    50% {
+        width: 50%;
     }
     100% {
         width: 0%;
@@ -352,7 +377,7 @@
 }
 
 .link::after{
-	transform: translate3d(0, 22px, 0);
+	transform: translate3d(0, 24px, 0);
 	transition: transform .2s ease-in;
   content: "";
 	width: 100%;
@@ -364,9 +389,8 @@
 }
 
 .link:hover::after{
-	animation: shrink 300ms ease-in-out forwards;
-  transform: translate3d(0, 22px, 0);
-
+	animation: shrink 400ms ease-in-out forwards;
+  transform: translate3d(0, 24px, 0);
 }
 
 .linkc {
