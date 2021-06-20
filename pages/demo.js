@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from '../styles/mun.module.css'
-import beta from '../styles/beta.module.css'
 import q from '../styles/Q.module.css'
 import React, { useState, Fragment } from 'react'
 import Fade from 'react-reveal/Fade';
@@ -15,16 +14,18 @@ class HugeImage extends React.Component {
         </Head>
 
         <img className={q.image} alt={this.props.alt} src={this.props.src} lazy></img>
-        <Fade><div className={q.overlay}>
+        <Fade>
+          <div className={q.overlay}>
 
-          <div>
-            <Fade left><p className={q.massivetop}>THIS<span className={q.purple}>MUN</span> I</p></Fade>
-            <Fade right><p className={q.massivemiddle}>Fostering <span className={q.lightpurple}>Global Ethics</span></p></Fade>
-            <Fade left><p className={q.massivemiddle}>in an Age of <span className={q.lightpurple}>Post Truths</span></p></Fade>
-            <Fade right><p className={q.massivebottom}>February <span className={q.lightpurple}>29th</span> to <span className={q.lightpurple}>30th</span> 2022</p></Fade>
+            <div>
+              <Fade left><p className={q.massivetop}>THIS<span className={q.purple}>MUN</span> I</p></Fade>
+              <Fade right><p className={q.massivemiddle}>Fostering <span className={q.lightpurple}>Global Ethics</span></p></Fade>
+              <Fade left><p className={q.massivemiddle}>in an Age of <span className={q.lightpurple}>Post Truths</span></p></Fade>
+              <Fade right><p className={q.massivebottom}>February <span className={q.lightpurple}>29th</span> to <span className={q.lightpurple}>30th</span> 2022</p></Fade>
+            </div>
+
           </div>
-
-        </div></Fade>
+        </Fade>
 
       </div>
     )
