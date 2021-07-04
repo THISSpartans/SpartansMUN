@@ -1,67 +1,56 @@
+//new version
 import Head from 'next/head'
-import styles from '../styles/mun.module.css'
-import React from 'react'
+import styles from '../styles/Cycles.module.css'
+import React, { useState, Fragment } from 'react'
+import Fade from 'react-reveal/Fade';
+import Footer from './src/footer.js';
+import Header from './src/header.js';
+import { ReactEmbeddedGoogleCalendar } from 'react-embedded-google-calendar';
+const PAGE_NAME = "Dates & Deadlines";
 
-class NavigationBar extends React.Component {
+const DATES = [ //MUST BE SORTED. PLEASE.
+  {date: new Date('September 25, 2021'), desc: "Early registration deadline. The fee before this date is ¥550!"},
+  {date: new Date('December 25, 2021'), desc: "final registration deadline. The fee before this date is ¥700!"},
+  {date: new Date('March 18, 2022'), desc: "THISMUN conference begins"},
+  {date: new Date('March 20, 2022'), desc: "THISMUN conference ends"},
+];
+
+class D extends React.Component {
   render() {
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let date = this.props.date;
+    let dateFormatted = `${months[date.getMonth()]} ${date.getDate()}, ${date.getYear()+1900}`
     return (
-      <div class={styles.bar}>
-        <div class={styles.dropdown}>
-          <span>THISMUN 2022</span>
-          <div class={styles.dropdowncontent}>
-            <p><a href="/invite">Invitation Letter</a></p>
-            <p><a href="/announcements">Announcements</a></p>
-            <p><a href="/aboutus">Our Team</a></p>
-            <p><a href="/topics">Committees & Topics</a></p>
-            <p><a href="/dates">Dates & Deadlines</a></p>
-            <p><a href="/housing">Accomodation</a></p>
-            <p><a href="/transport">Transportation</a></p>
-            <p><a href="/faq">FAQ</a></p>
-          </div>
-        </div>
-
-        <div class={styles.dropdown}>
-          <span><a href="/signup">Register!</a></span>
-        </div>
-      </div>
-    )
-  }
-}
-
-export class Header extends React.Component {
-  render() {
-    return (
-      <div>
-        <center><a href="/"><img className={styles.dlogo} src="THISMUNLOGO.png" width="200px" height="200px"></img></a>
-        <h1 className={styles.massive}>THIS<span className={styles.accent1}>MUN</span></h1></center>
+      <div className={styles.announcement}>
+        <span className={styles.heading}><span className={styles.datecontent}>&nbsp;{dateFormatted}<span className={styles.desc}> – {this.props.body}</span></span></span>
       </div>
     )
   }
 }
 
 export default function Home() {
+  //only change stuff in the MAIN tag
+  //sort dates
+
   return (
-    <div className={styles.container}>
+    <Fade cascade>
       <Head>
-        <title>THISMUN 2022 – Dates & Deadlines</title>
+        <title>THISMUN – {PAGE_NAME}</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <div id="top">
-          <Header/>
-      </div>
-      <NavigationBar/>
-      <main className={styles.main}>
-          <p className={styles.welcome}>February 30. The conference.</p>
-      </main>
-      <div className={styles.footerbg}>
-        <center className={styles.padcent}>
-          <img src="THISMUNLOGO.png" width="100px" height="100px"/>
-          <img src="SCHOOL LOGO.png" width="100px" height="100px"/>
-          <p className={styles.addressheading}><a href="http://www.this.edu.cn">Tsinghua International School</a></p>
-          <p className={styles.address}>Campus of Tsinghua High School, Beijing, China, 100084</p>
-        </center>
-      </div>
-    </div>
+      <Header/>
+
+      <Fade><main className={styles.cont}>
+        <p>Below is a timeline of the dates and deadlines for the THISMUN I conference. All times are in China standard time, UTC+8.</p>
+        {DATES.map(j => (
+          <D date={j.date} body={j.desc}/>
+        ))}
+
+        <div style={{padding: "120px"}}/>
+      </main></Fade>
+
+      <Footer/>
+    </Fade>
   )
 }

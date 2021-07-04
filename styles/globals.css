@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+embed {
+  border: 8px solid black;
+}

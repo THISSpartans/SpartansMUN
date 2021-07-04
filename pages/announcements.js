@@ -1,67 +1,48 @@
+//new version
 import Head from 'next/head'
-import styles from '../styles/mun.module.css'
-import React from 'react'
+import styles from '../styles/Cycles.module.css'
+import React, { useState, Fragment } from 'react'
+import Fade from 'react-reveal/Fade';
+import Footer from './src/footer.js';
+import Header from './src/header.js'
+const PAGE_NAME = "Announcements";
 
-class NavigationBar extends React.Component {
+class Announcement extends React.Component {
   render() {
     return (
-      <div class={styles.bar}>
-        <div class={styles.dropdown}>
-          <span>THISMUN 2022</span>
-          <div class={styles.dropdowncontent}>
-            <p><a href="/invite">Invitation Letter</a></p>
-            <p><a href="/announcements">Announcements</a></p>
-            <p><a href="/aboutus">Our Team</a></p>
-            <p><a href="/topics">Committees & Topics</a></p>
-            <p><a href="/dates">Dates & Deadlines</a></p>
-            <p><a href="/housing">Accomodation</a></p>
-            <p><a href="/transport">Transportation</a></p>
-            <p><a href="/faq">FAQ</a></p>
-          </div>
-        </div>
-
-        <div class={styles.dropdown}>
-          <span><a href="/signup">Register!</a></span>
-        </div>
+      <div className={styles.announcement}>
+        <img src={this.props.image}/>
+        <p className={styles.heading}>{this.props.heading}<span className={styles.date}>{this.props.date}</span></p>
+        <p>{this.props.body}</p>
       </div>
     )
   }
 }
 
-export class Header extends React.Component {
-  render() {
-    return (
-      <div>
-        <center><a href="/"><img className={styles.dlogo} src="THISMUNLOGO.png" width="200px" height="200px"></img></a>
-        <h1 className={styles.massive}>THIS<span className={styles.accent1}>MUN</span></h1></center>
-      </div>
-    )
-  }
-}
+const ANNOUNCEMENTS = [
+  {image: "box.png", date: "July 4th, 2021", heading: "sample announcement", body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
+  {image: "box.png", date: "July 4th, 2021", heading: "sample announcement", body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
+  {image: "box.png", date: "July 4th, 2021", heading: "sample announcement", body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
+]
 
 export default function Home() {
+  //only change stuff in the MAIN tag
   return (
-    <div className={styles.container}>
+    <Fade cascade>
       <Head>
-        <title>THISMUN 2022 – Announcements</title>
+        <title>THISMUN – {PAGE_NAME}</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <div id="top">
-          <Header/>
-      </div>
-      <NavigationBar/>
-      <main className={styles.main}>
-          <p className={styles.welcome}>We have things to say.</p>
-      </main>
-      <div className={styles.footerbg}>
-        <center className={styles.padcent}>
-          <img src="THISMUNLOGO.png" width="100px" height="100px"/>
-          <img src="SCHOOL LOGO.png" width="100px" height="100px"/>
-          <p className={styles.addressheading}><a href="http://www.this.edu.cn">Tsinghua International School</a></p>
-          <p className={styles.address}>Campus of Tsinghua High School, Beijing, China, 100084</p>
-        </center>
-      </div>
-    </div>
+      <Header/>
+
+      <Fade><main className={styles.cont}>
+        {ANNOUNCEMENTS.map(j => (
+          <Announcement image={j.image} date={j.date} heading={j.heading} body={j.body}/>
+        ))}
+      </main></Fade>
+
+      <Footer/>
+    </Fade>
   )
 }

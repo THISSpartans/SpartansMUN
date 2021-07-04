@@ -1,67 +1,73 @@
+//new version
 import Head from 'next/head'
-import styles from '../styles/mun.module.css'
-import React from 'react'
-//AL
-class NavigationBar extends React.Component {
-  render() {
-    return (
-      <div class={styles.bar}>
-        <div class={styles.dropdown}>
-          <span>THISMUN 2022</span>
-          <div class={styles.dropdowncontent}>
-            <p><a href="/invite">Invitation Letter</a></p>
-            <p><a href="/announcements">Announcements</a></p>
-            <p><a href="/aboutus">Our Team</a></p>
-            <p><a href="/topics">Committees & Topics</a></p>
-            <p><a href="/dates">Dates & Deadlines</a></p>
-            <p><a href="/housing">Accomodation</a></p>
-            <p><a href="/transport">Transportation</a></p>
-            <p><a href="/faq">FAQ</a></p>
-          </div>
-        </div>
+import styles from '../styles/Cycles.module.css'
+import React, { useState, Fragment } from 'react'
+import Fade from 'react-reveal/Fade';
+import Footer from './src/footer.js';
+import Header from './src/header.js'
+const PAGE_NAME = "Committees & Topics";
 
-        <div class={styles.dropdown}>
-          <span><a href="/signup">Register!</a></span>
-        </div>
-      </div>
-    )
+class CommitteeClass {
+  constructor(name, topicA, topicB, chair, cochair) {
+    this.name=name;
+    this.topicA=topicA;
+    this.topicB=topicB;
+    this.chair=chair;
+    this.cochair=cochair;
   }
 }
 
-export class Header extends React.Component {
-  render() {
-    return (
-      <div>
-        <center><a href="/"><img className={styles.dlogo} src="THISMUNLOGO.png" width="200px" height="200px"></img></a>
-        <h1 className={styles.massive}>THIS<span className={styles.accent1}>MUN</span></h1></center>
-      </div>
-    )
+class ChairClass {
+  constructor(name, email) {
+    this.name=name;
+    this.email=email;
   }
 }
+
+const COMLIST = [
+new CommitteeClass("UNESCO", "Era of Inequality led by Increasing Socioeconomic Gaps in Education", "Impact of Different Levels of Education on Employment", new ChairClass("Wenny Wang", "weining_wang23@this.edu.cn"), new ChairClass("Ken He")),
+
+new CommitteeClass("UNODC", "Policing the Injustice in Police Brutality", "Combatting Trafficking in Persons and Smuggling of Migrants", new ChairClass("Charlotte Wang", "charlotte_wang23@this.edu.cn"), new ChairClass("William Shan")),
+
+new CommitteeClass("UNEP", "Balancing Arctic Shipping and Environmental Protections", "Arctic Biodiversity Protection", new ChairClass("Jiangshan Gao", "jiangshan_gao22@this.edu.cn"), new ChairClass("Andrew Li", "andrew_li22@this.edu.cn")),
+
+new CommitteeClass("WHO", "Development of Tobacco Control within States", "Control and Prevention of AIDS", new ChairClass("Jane Ma", "jane_ma22@this.edu.cn"), new ChairClass("Zack Sui", "zack_sui23@this.edu.cn"))
+
+]
 
 export default function Home() {
+  //only change stuff in the MAIN tag
   return (
-    <div className={styles.container}>
+    <Fade cascade>
       <Head>
-        <title>THISMUN 2022 – Topics & Committees</title>
+        <title>THISMUN – {PAGE_NAME}</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <div id="top">
-          <Header/>
-      </div>
-      <NavigationBar/>
-      <main className={styles.main}>
-          <p className={styles.welcome}>Topics goes here...</p>
-      </main>
-      <div className={styles.footerbg}>
-        <center className={styles.padcent}>
-          <img src="THISMUNLOGO.png" width="100px" height="100px"/>
-          <img src="SCHOOL LOGO.png" width="100px" height="100px"/>
-          <p className={styles.addressheading}><a href="http://www.this.edu.cn">Tsinghua International School</a></p>
-          <p className={styles.address}>Campus of Tsinghua High School, Beijing, China, 100084</p>
-        </center>
-      </div>
-    </div>
+      <Header/>
+
+      <Fade><main className={styles.cont}>
+        <p className={styles.heading}>topics and committees</p>
+        <p>The THISMUN conference will have four committees, each with two topics. Below you can find the committees you would like to participate in, and if you'd like, contact your chairs.</p>
+        {COMLIST.map(i => (
+          <div className={styles.committee}>
+            <img src={i.name + ".png"}/>
+            <div className={styles.words}>
+              <p className={styles.comhead}>{i.name}</p>
+              <p className={styles.comtopic}>Topic A: <span className={styles.comchname}>{i.topicA}</span></p>
+              <p className={styles.comtopic}>Topic B: <span className={styles.comchname}>{i.topicB}</span></p>
+              <p className={styles.comch}>Chair: <a className={styles.comchname} href={"mailto:" + i.chair.email}>{i.chair.name}</a></p>
+              <p className={styles.comch}>Cochair: <a className={styles.comchname} href={"mailto:" + i.cochair.email}>{i.cochair.name}</a></p>
+            </div>
+          </div>
+        ))}
+
+        <p className={styles.heading} id="bg">background guide</p>
+        <p>Here, you can access the background guide file!</p>
+        <embed src="MUN.pdf" width="60%" height="700px" />
+      </main></Fade>
+
+      <Footer/>
+    </Fade>
   )
 }
