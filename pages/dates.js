@@ -5,7 +5,6 @@ import React, { useState, Fragment } from 'react'
 import Fade from 'react-reveal/Fade';
 import Footer from './src/footer.js';
 import Header from './src/header.js';
-import { ReactEmbeddedGoogleCalendar } from 'react-embedded-google-calendar';
 const PAGE_NAME = "Dates & Deadlines";
 
 const DATES = [ //MUST BE SORTED. PLEASE.

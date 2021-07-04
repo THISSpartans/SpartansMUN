@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Cycles.module.css'
 import React, { useState, Fragment } from 'react'
 import Fade from 'react-reveal/Fade';
-import Header from './src/Header.js';
+import Header from './src/header.js';
 import Footer from './src/Footer.js';
 
 const NAMES = [
