@@ -9,7 +9,7 @@ export class Footer extends React.Component {
     return (
       <Fade><div className={styles.footer}>
         <div id={styles.logos}>
-          <a href="https://www.thismun.com"><LazyLoadImage effect="blur" src="THISMUNLOGO.png" width="100px" height="100px"/></a>
+          <a href="/"><LazyLoadImage effect="blur" src="THISMUNLOGO.png" width="100px" height="100px"/></a>
           <a href="http://www.this.edu.cn"><LazyLoadImage effect="blur" src="SCHOOL LOGO.png" width="100px" height="100px"/></a>
         </div>
         <div className={styles.item}><a href="http://www.this.edu.cn"><span id={styles.school}>Tsinghua International School</span></a></div>
