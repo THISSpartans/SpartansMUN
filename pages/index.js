@@ -30,12 +30,12 @@ export default function Home() {
 
       <main>
         <div className={styles.bimg}>
-          <img src="BACKGROUND.jpg"/>
+          <img src="BACKGROUND.png"/>
         </div>
 
         <Fade cascade><div className={styles.cont}>
           <div className={styles.box} id={styles.A1}>
-            <img src="EXECS.jpeg"/>
+            <img src="EXECS.png"/>
             <p className={styles.heading}>welcome to THIS MUN!</p>
             <p>Welcome to the official website of THISMUN I! Here at Tsinghua International School, our core values are collaboration, discovery, engagement, cultural diversity, and Tsinghua Spirit. These are all values we emphasize in our Model United Nations club. THIS MUN is now hosting our first ever interschool conference in March 2022 on the theme, Fostering Global Ethics in an Age of Post Truths.</p>
             <p>What is an age of post truths? In short, it is a time where facts and evidence are being obscured to deceive. Granted, there have always been ridiculous lies told by global leaders, but recent dishonesty on all sorts of platforms–radio and television and social media and many others–have catalysed conflict. The people affected are no longer in one small community; the people affected are scattered all around the world. Conflict is now accessible at the press of a button, often one that says “Tweet”. It’s time for us to clarify the facts.</p>

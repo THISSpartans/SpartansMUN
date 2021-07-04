@@ -12,7 +12,6 @@ export class Navigation extends React.Component {
     const dropdownThree = [
       {title: 'Invitation Letter', link: '/invite'},
       {title: 'Committees & Topics', link: '/topics'},
-      {title: 'Background Guide', link: '/topics#bg'},
       {title: 'Dates & Deadlines', link: '/dates'},
       {title: 'Schedule', link: '/schedule'}
     ];

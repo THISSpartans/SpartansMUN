@@ -178,7 +178,7 @@ $mw: 640px;
 
     img {
       min-width: 400px;
-      width: 50%;
+      width: 80%;
       margin: auto;
     }
   }
@@ -419,4 +419,18 @@ $mw: 640px;
     font-weight: 400;
     font-size: 2vh;
   }
+}
+
+.preloadDark {
+  background-color: $c1-dark;
+  display: block;
+  width: 100%;
+  min-width: 1200px;
+  z-index: -1000;
+}
+
+.preloadLight {
+  background-color: $c1-light;
+  display: block;
+  width: 75%;
 }

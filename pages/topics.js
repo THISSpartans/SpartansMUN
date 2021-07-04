@@ -61,10 +61,6 @@ export default function Home() {
             </div>
           </div>
         ))}
-
-        <p className={styles.heading} id="bg">background guide</p>
-        <p>Here, you can access the background guide file!</p>
-        <embed src="MUN.pdf" width="60%" height="700px" />
       </main></Fade>
 
       <Footer/>
