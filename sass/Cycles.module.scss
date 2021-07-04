@@ -9,7 +9,7 @@ $c2prim: #FFAA6E;
 
 $h-text: 3vh;
 $b-text: 2vh;
-$mw: 640px;
+$mw: 680px;
 
 .header {
   //background-color: $c1-dark;
@@ -59,6 +59,7 @@ $mw: 640px;
 .navbar {
   display: flex;
   flex-wrap: wrap;
+  min-width: 750px;
   //background-color: $c1prim;
   justify-content: space-around;
   width: 100%;
@@ -284,6 +285,23 @@ $mw: 640px;
   .datecontent {
     font-size: 2.8vh;
     color: $c1-dark;
+    font-weight: 900;
+  }
+}
+
+.dateDisplay {
+  padding: 2vh;
+  padding-left: 0;
+
+  .desc {
+    font-weight: 300;
+    padding-left: 5vh;
+  }
+
+  .datecontent {
+    font-size: 2.8vh;
+    color: $c1-dark;
+    font-weight: 900;
   }
 }
 
@@ -434,4 +452,17 @@ $mw: 640px;
   background-color: $c1-light;
   display: block;
   width: 75%;
+}
+
+#regFlex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  p {
+    flex: 3;
+    padding: 1vh;
+  }
 }

@@ -19,6 +19,14 @@ export default function Home() {
       <Header/>
 
       <Fade><main className={styles.cont}>
+        <p className={styles.heading}>registration information</p>
+        <div id={styles.regFlex}>
+          <p><b>Early-bird deadline</b><br/>9/25/2021</p>
+          <p><b>FINAL deadline</b><br/>12/25/2021</p>
+          <p><b>Early-bird registration fee</b><br/>¥550/delegate</p>
+          <p><b>Standard registration fee</b><br/>¥700/delegate</p>
+        </div>
+        <p className={styles.heading}>registration form</p>
         <iframe className={styles.form} src="https://forms.office.com/Pages/ResponsePage.aspx?id=Kg2a5b7u2U6De0teNfqKAGTI6dV50OFLkBB2piqgzy9UQ1dFUjdaTTlBTkxXVlFVQkVQWVdWMDMyUi4u&embed=true" frameborder= "0" marginwidth= "0" marginheight= "0" style={{border: "none"}} allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
       </main></Fade>
 

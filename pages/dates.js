@@ -8,8 +8,8 @@ import Header from './src/header.js';
 const PAGE_NAME = "Dates & Deadlines";
 
 const DATES = [ //MUST BE SORTED. PLEASE.
-  {date: new Date('September 25, 2021'), desc: "Early registration deadline. The fee before this date is ¥550!"},
-  {date: new Date('December 25, 2021'), desc: "final registration deadline. The fee before this date is ¥700!"},
+  {date: new Date('September 25, 2021'), desc: "Early registration deadline. Register before this date for a ¥150 discount!"},
+  {date: new Date('December 25, 2021'), desc: "FINAL registration deadline."},
   {date: new Date('March 18, 2022'), desc: "THISMUN conference begins"},
   {date: new Date('March 20, 2022'), desc: "THISMUN conference ends"},
 ];
@@ -20,8 +20,8 @@ class D extends React.Component {
     let date = this.props.date;
     let dateFormatted = `${months[date.getMonth()]} ${date.getDate()}, ${date.getYear()+1900}`
     return (
-      <div className={styles.announcement}>
-        <span className={styles.heading}><span className={styles.datecontent}>&nbsp;{dateFormatted}<span className={styles.desc}> – {this.props.body}</span></span></span>
+      <div className={styles.dateDisplay}>
+        <span className={styles.datecontent}>{dateFormatted}</span><span className={styles.desc}>{this.props.body}</span>
       </div>
     )
   }
