@@ -4,7 +4,7 @@ import styles from '../styles/Cycles.module.css'
 import React, { useState, Fragment } from 'react'
 import Fade from 'react-reveal/Fade';
 import Header from './src/header.js';
-import Footer from './src/Footer.js';
+import Footer from './src/footer.js';
 
 const NAMES = [
   "Ms. Benita Sumita",
