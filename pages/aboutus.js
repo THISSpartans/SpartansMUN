@@ -6,6 +6,8 @@ import Fade from 'react-reveal/Fade';
 import Footer from './src/footer.js';
 import Header from './src/header.js'
 const PAGE_NAME = "MUN Exec Team";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const EXECS = [
   {id: "wenny", name: "wenny wang", bio: "i am wenny."},
@@ -28,7 +30,7 @@ export default function Home() {
         <div id={styles.execs}>
         {EXECS.map((e, index) => (
           <div className={styles.exec}>
-            <img src={"execs/" + e.id + ".png"} style={{float: "left"}}/>
+            <LazyLoadImage effect="blur" src={"execs/" + e.id + ".png"} style={{float: "left"}}/>
             <div className={styles.words}>
               <p className={styles.name}>{e.name}</p>
               <p className={styles.bio}>{e.bio}</p>

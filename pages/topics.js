@@ -6,6 +6,8 @@ import Fade from 'react-reveal/Fade';
 import Footer from './src/footer.js';
 import Header from './src/header.js'
 const PAGE_NAME = "Committees & Topics";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 class CommitteeClass {
   constructor(name, topicA, topicB, chair, cochair) {
@@ -51,7 +53,7 @@ export default function Home() {
         <p>The THISMUN conference will have four committees, each with two topics. Below you can find the committees you would like to participate in, and if you'd like, contact your chairs.</p>
         {COMLIST.map(i => (
           <div className={styles.committee}>
-            <img src={i.name + ".png"}/>
+            <LazyLoadImage effect="blur" src={i.name + ".png"}/>
             <div className={styles.words}>
               <p className={styles.comhead}>{i.name}</p>
               <p className={styles.comtopic}>Topic A: <span className={styles.comchname}>{i.topicA}</span></p>
