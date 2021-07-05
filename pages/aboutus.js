@@ -15,6 +15,20 @@ const EXECS = [
   {id: "zack", name: "zack sui", bio: "i am zack sui."},
 ]
 
+let execsDisplay = (<Fade><main className={styles.cont}>
+  <div id={styles.execs}>
+  {EXECS.map((e, index) => (
+    <div className={styles.exec}>
+      <LazyLoadImage effect="blur" src={"execs/" + e.id + ".png"} style={{float: "left"}}/>
+      <div className={styles.words}>
+        <p className={styles.name}>{e.name}</p>
+        <p className={styles.bio}>{e.bio}</p>
+      </div>
+    </div>
+  ))}
+  </div>
+</main></Fade>)
+
 export default function Home() {
   //only change stuff in the MAIN tag
   return (
@@ -27,17 +41,8 @@ export default function Home() {
       <Header/>
 
       <Fade><main className={styles.cont}>
-        <div id={styles.execs}>
-        {EXECS.map((e, index) => (
-          <div className={styles.exec}>
-            <LazyLoadImage effect="blur" src={"execs/" + e.id + ".png"} style={{float: "left"}}/>
-            <div className={styles.words}>
-              <p className={styles.name}>{e.name}</p>
-              <p className={styles.bio}>{e.bio}</p>
-            </div>
-          </div>
-        ))}
-        </div>
+        <p className={styles.heading}>more information about the THISMUN organizers will be released soon!</p>
+        <div style={{padding: "250px"}}/>
       </main></Fade>
 
       <Footer/>

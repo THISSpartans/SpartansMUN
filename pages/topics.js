@@ -33,7 +33,7 @@ new CommitteeClass("UNODC", "Policing the Injustice in Police Brutality", "Comba
 
 new CommitteeClass("UNEP", "Balancing Arctic Shipping and Environmental Protections", "Arctic Biodiversity Protection", new ChairClass("Jiangshan Gao", "jiangshan_gao22@this.edu.cn"), new ChairClass("Andrew Li", "andrew_li22@this.edu.cn")),
 
-new CommitteeClass("WHO", "Development of Tobacco Control within States", "Control and Prevention of AIDS", new ChairClass("Jane Ma", "jane_ma22@this.edu.cn"), new ChairClass("Zack Sui", "zack_sui23@this.edu.cn"))
+new CommitteeClass("WHO", "Development of Tobacco Control within States", "Control and Prevention of AIDS", new ChairClass("Jane Ma", "yongyi_ma22@this.edu.cn"), new ChairClass("Zack Sui", "zack_sui23@this.edu.cn"))
 
 ]
 
