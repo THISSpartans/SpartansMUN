@@ -14,6 +14,7 @@ $mw: 680px;
 .header {
   //background-color: $c1-dark;
   color: $c1-light;
+  transition: all 0.5s;
   font-weight: 800;
   font-size: $b-text;
   margin: 0;
@@ -58,10 +59,11 @@ $mw: 680px;
 
 .navbar {
   display: flex;
+  transition: all 0.5s;
   flex-wrap: wrap;
   min-width: 750px;
   //background-color: $c1prim;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
   z-index: 1000;
 
@@ -80,17 +82,19 @@ $mw: 680px;
     padding-right: 5vw;
     padding-left: 5vw;
     min-width: 250px;
+    transition: all 0.5s;
     z-index: 1000;
+    display: flex;
     .content {
       padding: 1vh;
       font-weight: normal;
       display: none;
       position: absolute;
+      //top: 0;
       background-color: $c1prim;
-      box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
       padding-left: 10px;
       padding-right: 10px;
-      min-width: 160px;
+      //min-width: 160px;
       color: #fff;
       transition: all 300ms ease-in-out forwards;
       transform-origin: top center;
@@ -107,8 +111,10 @@ $mw: 680px;
   }
 
   .nav:hover .content {
-    display: block;
-    animation: growDown 300ms ease-in-out backwards;
+    display: contents;
+    transition: 0.5s all;
+    //transition: all 0.5s;
+    animation: growDown 500ms ease-in-out backwards;
   }
 
   .sel {
