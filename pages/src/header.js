@@ -10,7 +10,7 @@ export class Header extends React.Component {
     return (
       <div className={styles.header}>
         <a href="/"><div className={styles.logo}><LazyLoadImage effect="blur" src="THISMUNLOGO.png"/></div></a>
-        <a href="/"><div className={styles.ltext}>THIS<span id={styles.m}>MUN</span>&nbsp;I
+        <a href="/"><div className={styles.ltext}>THIS<span id={styles.m}>MUN</span>&nbsp;II
         <div className={styles.btext}><em>Fostering Global Ethics in an Age of Post Truths</em></div></div></a>
         <Navigation/>
       </div>
